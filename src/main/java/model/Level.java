@@ -1,0 +1,125 @@
+package model;
+
+public class Level {
+
+	private int compteur;
+	private int nombreCourse;
+	private int nombreVictoire;
+	private int nombreSaison;
+	private int pdc; //pointDeCompetence
+	private int salaire;
+	private int popularite;
+	
+	
+	//constructeur pour le reste(Infrastructure , Voiture)
+	public Level(int compteur, int nombreCourse, int nombreVictoire, int nombreSaison, int pdc) {
+		this.compteur = compteur;
+		this.nombreCourse = nombreCourse;
+		this.nombreVictoire = nombreVictoire;
+		this.nombreSaison = nombreSaison;
+		this.pdc = pdc;
+	}
+
+
+	//Constructeur pour pilote
+		public Level(int compteur, int nombreCourse, int nombreVictoire, int nombreSaison, int pdc, int salaire,
+			int popularite) {
+		this.compteur = compteur;
+		this.nombreCourse = nombreCourse;
+		this.nombreVictoire = nombreVictoire;
+		this.nombreSaison = nombreSaison;
+		this.pdc = pdc;
+		this.salaire = salaire;
+		this.popularite = popularite;
+	}
+
+
+	
+
+	
+	
+	public int getCompteur() {
+		return compteur;
+	}
+
+
+
+	
+
+
+	public void setCompteur(int compteur) {
+		this.compteur = compteur;
+	}
+
+
+
+	public int getNombreCourse() {
+		return nombreCourse;
+	}
+
+
+
+	public void setNombreCourse(int nombreCourse) {
+		this.nombreCourse = nombreCourse;
+	}
+
+
+
+	public int getNombreVictoire() {
+		return nombreVictoire;
+	}
+
+
+
+	public void setNombreVictoire(int nombreVictoire) {
+		this.nombreVictoire = nombreVictoire;
+	}
+
+
+
+	public int getNombreSaison() {
+		return nombreSaison;
+	}
+
+
+
+	public void setNombreSaison(int nombreSaison) {
+		this.nombreSaison = nombreSaison;
+	}
+
+
+
+	public int getPdc() {
+		return pdc;
+	}
+
+
+
+	public void setPdc(int pdc) {
+		this.pdc = pdc;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "level [compteur=" + compteur + ", nombreCourse=" + nombreCourse + ", nombreVictoire=" + nombreVictoire
+				+ ", nombreSaison=" + nombreSaison + ", pdc=" + pdc + "]";
+	}
+
+
+	public int getSalaire() {
+		return salaire;
+	}
+
+
+	public void setSalaire(int salaire) {
+		this.salaire = salaire;
+	}
+	
+	
+	
+	
+	
+	
+}
