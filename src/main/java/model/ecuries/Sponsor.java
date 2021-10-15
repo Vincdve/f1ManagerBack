@@ -12,7 +12,7 @@ public class Sponsor extends Achetable {
 	
 	
 	
-	public Sponsor(String objet, int prix, String nom, Objectif objectif, LocalDate duree) {
+	public Sponsor(int prix, String nom, Objectif objectif, LocalDate duree) {
 		super(prix);
 		this.nom = nom;
 		this.objectif = objectif;

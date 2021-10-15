@@ -15,7 +15,7 @@ public class Voiture extends Achetable {
 	
 	
 	
-	public Voiture(String objet, int prix, String marque, Level level, int maniabilite, int vitesse, double poids) {
+	public Voiture(int prix, String marque, Level level, int maniabilite, int vitesse, double poids) {
 		super(prix);
 		this.marque = marque;
 		this.level = level;
