@@ -1,5 +1,7 @@
 package dao;
 
-public interface IDAOinfrastructure {
+import model.ecuries.Infrastructure;
+
+public interface IDAOinfrastructure extends IDAO<Infrastructure,Integer>{
 
 }

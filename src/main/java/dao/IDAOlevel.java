@@ -1,5 +1,7 @@
 package dao;
 
-public interface IDAOlevel {
+import model.ecuries.Level;
+
+public interface IDAOlevel extends IDAO<Level,Integer> {
 
 }

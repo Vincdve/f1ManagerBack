@@ -1,5 +1,7 @@
 package dao;
 
-public interface IDAOsponsor {
+import model.ecuries.Sponsor;
+
+public interface IDAOsponsor extends IDAO<Sponsor,Integer>{
 
 }

@@ -1,5 +1,7 @@
 package dao;
 
-public interface IDAOpilote {
+import model.ecuries.Pilote;
+
+public interface IDAOpilote extends IDAO<Pilote,Integer>{
 
 }

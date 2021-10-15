@@ -1,5 +1,7 @@
 package dao;
 
-public interface IDAOvoiture {
+import model.ecuries.Voiture;
+
+public interface IDAOvoiture extends IDAO<Voiture,Integer>{
 
 }
