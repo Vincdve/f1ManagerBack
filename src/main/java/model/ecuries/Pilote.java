@@ -1,11 +1,18 @@
 package model.ecuries;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+
 import model.courses.Achetable;
 
+@Entity
+@DiscriminatorValue("Pilote")
 public class Pilote extends Achetable {
 
 	
 
+	
 	private String nom;
 	private String prenom;
 	private int age ;
@@ -17,11 +24,11 @@ public class Pilote extends Achetable {
 	// private Caracteristique carac;
 	
 	
-	
+	public Pilote() {super();}
 	
 	
 
-	public Pilote(String objet, int prix) {
+	public Pilote(int prix) {
 		super(prix);
 		// TODO Auto-generated constructor stub
 	}

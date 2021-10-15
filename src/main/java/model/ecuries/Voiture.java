@@ -1,9 +1,18 @@
 package model.ecuries;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 import model.courses.Achetable;
 
+
+
+@Entity
+@DiscriminatorValue("Voiture")
 public class Voiture extends Achetable {
 
+	
+	
 	private String marque;
 	
 	private Level level;
@@ -13,6 +22,8 @@ public class Voiture extends Achetable {
 	
 	// private Caracteristique carac;
 	
+	
+	public Voiture () {}
 	
 	
 	public Voiture(int prix, String marque, Level level, int maniabilite, int vitesse, double poids) {
