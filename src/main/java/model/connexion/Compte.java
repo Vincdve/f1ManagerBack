@@ -1,4 +1,4 @@
-package model;
+package model.connexion;
 
 public abstract class Compte {
 

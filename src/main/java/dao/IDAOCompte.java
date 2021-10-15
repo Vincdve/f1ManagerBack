@@ -1,6 +1,6 @@
 package dao;
 
-import model.Compte;
+import model.connexion.Compte;
 
 public interface IDAOCompte {
 

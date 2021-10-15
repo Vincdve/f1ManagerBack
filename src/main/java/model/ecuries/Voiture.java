@@ -1,4 +1,6 @@
-package model;
+package model.ecuries;
+
+import model.courses.Boutique;
 
 public class Voiture extends Boutique {
 

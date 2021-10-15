@@ -1,6 +1,8 @@
-package model;
+package model.ecuries;
 
 import java.time.LocalDate;
+
+import model.courses.Boutique;
 
 public class Sponsor extends Boutique {
 

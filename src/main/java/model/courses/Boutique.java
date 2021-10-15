@@ -1,4 +1,4 @@
-package model;
+package model.courses;
 
 public class Boutique {
 

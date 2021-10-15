@@ -1,4 +1,4 @@
-package model;
+package model.ecuries;
 
 public class Level {
 
@@ -30,7 +30,7 @@ public class Level {
 		this.nombreSaison = nombreSaison;
 		this.pdc = pdc;
 		this.salaire = salaire;
-		this.popularite = popularite;
+		this.setPopularite(popularite);
 	}
 
 
@@ -101,11 +101,7 @@ public class Level {
 
 
 
-	@Override
-	public String toString() {
-		return "level [compteur=" + compteur + ", nombreCourse=" + nombreCourse + ", nombreVictoire=" + nombreVictoire
-				+ ", nombreSaison=" + nombreSaison + ", pdc=" + pdc + "]";
-	}
+	
 
 
 	public int getSalaire() {
@@ -116,8 +112,22 @@ public class Level {
 	public void setSalaire(int salaire) {
 		this.salaire = salaire;
 	}
+
+
+	public int getPopularite() {
+		return popularite;
+	}
+
+
+	public void setPopularite(int popularite) {
+		this.popularite = popularite;
+	}
 	
-	
+	@Override
+	public String toString() {
+		return "level [compteur=" + compteur + ", nombreCourse=" + nombreCourse + ", nombreVictoire=" + nombreVictoire
+				+ ", nombreSaison=" + nombreSaison + ", pdc=" + pdc + "]";
+	}
 	
 	
 	

@@ -1,7 +1,9 @@
-package model;
+package model.courses;
 
 
 import java.util.List;
+
+import model.ecuries.Pilote;
 
 public class IA extends Course{
 

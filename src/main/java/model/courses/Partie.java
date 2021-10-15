@@ -1,6 +1,8 @@
-package model;
+package model.courses;
 
 import java.util.List;
+
+import model.connexion.Joueur;
 
 public class Partie extends Joueur{
 

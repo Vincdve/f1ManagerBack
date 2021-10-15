@@ -1,6 +1,6 @@
-package model;
+package model.ecuries;
 
-
+import model.courses.Saison;
 
 public class Ecurie {
 

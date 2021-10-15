@@ -1,4 +1,4 @@
-package model;
+package model.connexion;
 
 public class Joueur extends Compte{
 	
