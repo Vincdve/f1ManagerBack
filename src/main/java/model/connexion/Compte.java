@@ -18,9 +18,9 @@ public abstract class Compte {
 		
 	}
 
-//	public Connect connect() {
-//		
-//	}
+	public void connect(String login, String password) {
+		
+	}
 
 	
 	public String getLogin() {
