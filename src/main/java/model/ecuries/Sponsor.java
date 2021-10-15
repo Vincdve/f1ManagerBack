@@ -2,9 +2,9 @@ package model.ecuries;
 
 import java.time.LocalDate;
 
-import model.courses.Boutique;
+import model.courses.Achetable;
 
-public class Sponsor extends Boutique {
+public class Sponsor extends Achetable {
 
 	private String nom;
 	private Objectif objectif;
@@ -13,7 +13,7 @@ public class Sponsor extends Boutique {
 	
 	
 	public Sponsor(String objet, int prix, String nom, Objectif objectif, LocalDate duree) {
-		super(objet, prix);
+		super(prix);
 		this.nom = nom;
 		this.objectif = objectif;
 		this.duree = duree;

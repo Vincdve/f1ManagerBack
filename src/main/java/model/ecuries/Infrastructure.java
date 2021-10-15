@@ -1,8 +1,8 @@
 package model.ecuries;
 
-import model.courses.Boutique;
+import model.courses.Achetable;
 
-public class Infrastructure extends Boutique {
+public class Infrastructure extends Achetable {
 
 	private String nom;
 	private String type;
@@ -12,9 +12,9 @@ public class Infrastructure extends Boutique {
 	// private Caracteristique carac;
 	
 	
-	public Infrastructure(String objet, int prix, String nom, String type, int nombreIngenieur, int pitStop,
+	public Infrastructure( int prix, String nom, String type, int nombreIngenieur, int pitStop,
 			Level level) {
-		super(objet, prix);
+		super(prix);
 		this.nom = nom;
 		this.type = type;
 		this.nombreIngenieur = nombreIngenieur;

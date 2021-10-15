@@ -14,6 +14,7 @@ public class Course {
 	
 	
 	
+	
 	public Course(String nom, int nombreTour, Alea alea, double cashPrice, List<Pilote> classement) {
 		this.nom = nom;
 		this.nombreTour = nombreTour;

@@ -3,9 +3,9 @@ package model.ecuries;
 public class Level {
 
 	private int compteur;
-	private int nombreCourse;
-	private int nombreVictoire;
-	private int nombreSaison;
+	private int nombreCourse;// les course .siez
+	private int nombreVictoire; // les classement la list where ordre = 1
+	private int nombreSaison; //
 	private int pdc; //pointDeCompetence
 	private int salaire;
 	private int popularite;

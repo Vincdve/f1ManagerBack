@@ -1,8 +1,8 @@
 package model.ecuries;
 
-import model.courses.Boutique;
+import model.courses.Achetable;
 
-public class Pilote extends Boutique {
+public class Pilote extends Achetable {
 
 	
 
@@ -13,6 +13,7 @@ public class Pilote extends Boutique {
 	private Level level;
 	private Voiture voiture;
 	
+	
 	// private Caracteristique carac;
 	
 	
@@ -21,7 +22,7 @@ public class Pilote extends Boutique {
 	
 
 	public Pilote(String objet, int prix) {
-		super(objet, prix);
+		super(prix);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -30,7 +31,7 @@ public class Pilote extends Boutique {
 
 	public Pilote(String objet, int prix, String nom, String prenom, int age, String civ, Level level,
 			Voiture voiture) {
-		super(objet, prix);
+		super(prix);
 		this.nom = nom;
 		this.prenom = prenom;
 		this.age = age;
