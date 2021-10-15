@@ -1,11 +1,21 @@
 package model.connexion;
 
+
 import java.util.List;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 import model.ecuries.Infrastructure;
 import model.ecuries.Pilote;
 import model.ecuries.Voiture;
 
+
+@Entity
+@DiscriminatorValue("Joueur")
 public class Joueur extends Compte{
 	
 	
@@ -14,8 +24,29 @@ public class Joueur extends Compte{
 	private int age;
 	private double experience;
 	private boolean bot;
+	@ManyToMany
+	@JoinTable
+	(
+		name="voitures_joueur",
+		joinColumns = @JoinColumn(name="id"),
+		inverseJoinColumns = @JoinColumn(name="marque")
+	)
 	private List<Voiture> voiture;
+	@ManyToMany
+	@JoinTable
+	(
+		name="pilotes_joueur",
+		joinColumns = @JoinColumn(name="id"),
+		inverseJoinColumns = @JoinColumn(name="nom")
+	)
 	private List<Pilote> pilote;
+	@ManyToMany
+	@JoinTable
+	(
+		name="infrastructure_joueur",
+		joinColumns = @JoinColumn(name="id"),
+		inverseJoinColumns = @JoinColumn(name="nom")
+	)
 	private List<Infrastructure> infrastructure;
 	
 	

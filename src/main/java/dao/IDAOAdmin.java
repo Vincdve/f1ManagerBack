@@ -1,5 +1,7 @@
 package dao;
 
-public interface IDAOAdmin {
+import model.connexion.Admin;
+
+public interface IDAOAdmin extends IDAO <Admin , Integer> {
 
 }
