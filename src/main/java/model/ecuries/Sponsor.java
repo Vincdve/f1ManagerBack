@@ -2,17 +2,21 @@ package model.ecuries;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+
 import model.courses.Achetable;
 
+@Entity
 public class Sponsor extends Achetable {
 
+	
 	private String nom;
 	private Objectif objectif;
 	private LocalDate duree;
 	
+	public Sponsor () {}
 	
-	
-	public Sponsor(String objet, int prix, String nom, Objectif objectif, LocalDate duree) {
+	public Sponsor(int prix, String nom, Objectif objectif, LocalDate duree) {
 		super(prix);
 		this.nom = nom;
 		this.objectif = objectif;

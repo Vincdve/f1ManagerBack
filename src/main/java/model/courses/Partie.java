@@ -9,6 +9,7 @@ import model.ecuries.Voiture;
 
 public class Partie extends Joueur{
 
+	
 	private List <Saison> listeSaison;
 	private int numero;
 	

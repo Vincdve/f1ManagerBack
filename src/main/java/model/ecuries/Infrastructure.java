@@ -1,9 +1,16 @@
 package model.ecuries;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 import model.courses.Achetable;
 
+@Entity
+@DiscriminatorValue("Infrastructure")
 public class Infrastructure extends Achetable {
 
+	
+	
 	private String nom;
 	private String type;
 	private int nombreIngenieur;
@@ -11,6 +18,7 @@ public class Infrastructure extends Achetable {
 	private Level level;
 	// private Caracteristique carac;
 	
+	public Infrastructure() {super();}
 	
 	public Infrastructure( int prix, String nom, String type, int nombreIngenieur, int pitStop,
 			Level level) {
