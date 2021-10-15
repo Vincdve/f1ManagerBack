@@ -1,8 +1,8 @@
 package util;
+import java.util.LinkedList;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 
 import model.connexion.Compte;
 
