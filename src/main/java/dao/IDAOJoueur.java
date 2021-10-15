@@ -1,5 +1,7 @@
 package dao;
 
-public interface IDAOJoueur {
+import model.connexion.Joueur;
+
+public interface IDAOJoueur extends IDAO <Joueur , Integer>{
 
 }
