@@ -160,14 +160,7 @@ public class App {
 	
 	public static void main(String[] args) {
 
-		Level level = new Level(1, 0, 0, 0, 1);
-	
-		Voiture voiture = new Voiture(50000, "Ferrari",level, 20, 300, 400);
 		
-		Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", level,voiture);
-		
-		
-<<<<<<< Updated upstream
 		Objectif o = new Objectif("Gagner 3 courses", "Décrocher 3 victoires", 10000);
 		Level l = new Level(1,1,1,1,150);
 		Level l_pilote = new Level(1,1,1,1,150,5000,25);
@@ -176,8 +169,7 @@ public class App {
 		Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", l_pilote, v);
 		Sponsor s = new Sponsor(30000, "Motul", o, LocalDate.now());
 		
-=======
->>>>>>> Stashed changes
+
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
 
 		EntityManager em = emf.createEntityManager();
