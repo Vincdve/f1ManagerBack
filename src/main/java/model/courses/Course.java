@@ -6,6 +6,7 @@ import model.ecuries.Pilote;
 
 public class Course {
 
+	
 	private String nom;
 	private int nombreTour;
 	private Alea alea;
