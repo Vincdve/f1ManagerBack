@@ -17,7 +17,7 @@ public class Pilote extends Achetable {
 	private String prenom;
 	private int age ;
 	private String civ;
-	private Level level;
+	private transient Level level;
 	private Voiture voiture;
 	
 	

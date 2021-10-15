@@ -92,7 +92,7 @@ public class App {
 	 
 	private static void menuAdmin() {
 		System.out.println("Menu Admin : ");
-		System.out.println("1 - Accéder à la boutique ");
+		System.out.println("1 - Accï¿½der ï¿½ la boutique ");
 		System.out.println("2 - Retour");
 		
 		
@@ -113,7 +113,7 @@ public class App {
 	public static void menuJoueur()
 	{
 		System.out.println("Menu Joueur : ");
-		System.out.println("1 - Accéder à la partie ");
+		System.out.println("1 - Accï¿½der ï¿½ la partie ");
 		System.out.println("2 - Retour");
 		
 		
@@ -132,7 +132,7 @@ public class App {
 	private static void lancerPartie() {
 
 		System.out.println("Partie : ");
-		System.out.println("1 - Configurer l'écurie ");
+		System.out.println("1 - Configurer l'ï¿½curie ");
 		System.out.println("2 - Lancer une course");
 		System.out.println("3 - Retour");
 		
@@ -161,7 +161,7 @@ public class App {
 	public static void main(String[] args) {
 
 		
-		Objectif o = new Objectif("Gagner 3 courses", "Décrocher 3 victoires", 10000);
+		Objectif o = new Objectif("Gagner 3 courses", "Decrocher 3 victoires", 10000);
 		Level l = new Level(1,1,1,1,150);
 		Level l_pilote = new Level(1,1,1,1,150,5000,25);
 		Infrastructure inf = new Infrastructure(200000, "R&D", "Chassis", 5, 2, l);
@@ -173,7 +173,17 @@ public class App {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
 
 		EntityManager em = emf.createEntityManager();
-
+		
+		em.getTransaction().begin();
+		em.persist(o);
+		em.persist(l);
+		em.persist(l_pilote);
+		em.persist(inf);
+		em.persist(v);
+		em.persist(p);
+		em.persist(s);
+		
+		em.getTransaction().commit();
 		em.close();
 
 		emf.close();

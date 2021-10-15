@@ -1,7 +1,16 @@
 package model.ecuries;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Level {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private int compteur;
 	private int nombreCourse;// les course .siez
 	private int nombreVictoire; // les classement la list where ordre = 1
@@ -10,6 +19,9 @@ public class Level {
 	private int salaire;
 	private int popularite;
 	
+	public Level() {
+		
+	}
 	
 	//constructeur pour le reste(Infrastructure , Voiture)
 	public Level(int compteur, int nombreCourse, int nombreVictoire, int nombreSaison, int pdc) {

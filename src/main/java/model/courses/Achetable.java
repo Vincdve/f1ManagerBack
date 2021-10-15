@@ -18,6 +18,7 @@ public class Achetable {
 	private int Id;
 	private int prix;
 	
+
 	
 	public Achetable(int prix) {
 		this.prix = prix;

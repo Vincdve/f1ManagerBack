@@ -15,7 +15,7 @@ public class Infrastructure extends Achetable {
 	private String type;
 	private int nombreIngenieur;
 	private int pitStop; //sur la course quand ils changent les pneus
-	private Level level;
+	private transient Level level;
 	// private Caracteristique carac;
 	
 	public Infrastructure() {super();}
