@@ -1,15 +1,32 @@
 package app;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 import model.connexion.Admin;
 import model.connexion.Compte;
 import model.connexion.Joueur;
+import model.courses.Course;
+import model.ecuries.Level;
+import model.ecuries.Objectif;
+import model.ecuries.Pilote;
+import model.ecuries.Sponsor;
+import model.ecuries.Voiture;
 import util.Context;
 
 
 public class App {
 	
+	List<Pilote> pilotes = new ArrayList();
+	List<Voiture> voitures = new ArrayList();
+	List<Sponsor> sponsors = new ArrayList();
+	List<Course> courses = new ArrayList();
+	List<Objectif> objectifs = new ArrayList();
 	
 	public static String saisieString(String msg) 
 	{
@@ -54,7 +71,7 @@ public class App {
 	private static void seConnecter() {
 		String login = saisieString("Saisir le login");
 		String password = saisieString("Saisir le password");
-		Compte connected=Context.getInstance().getDaoC().connect(login,password); // FaireIDAOCompte et DAOCompte ainsi que changer la class compte
+		Compte connected=Context.getInstance().getDaoCompte().connect(login,password); // FaireIDAOCompte et DAOCompte ainsi que changer la class compte
 		Context.getInstance().setConnected(connected);
 
 		if(connected instanceof Joueur) 
@@ -75,7 +92,7 @@ public class App {
 
 	
 	
-	
+	 
 	private static void menuAdmin() {
 		System.out.println("Menu Admin : ");
 		System.out.println("1 - Accéder à la boutique ");
@@ -93,8 +110,7 @@ public class App {
 
 	private static void Boutique() {
 
-	
-		menuPrincipal();
+		
 		}
 
 	public static void menuJoueur()
@@ -146,7 +162,16 @@ public class App {
 
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		//Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", 50,);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
+
+		EntityManager em = emf.createEntityManager();
+
+		em.close();
+
+		emf.close();
+
 
 		
 
