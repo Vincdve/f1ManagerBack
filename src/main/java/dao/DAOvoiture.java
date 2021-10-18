@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import model.ecuries.Voiture;
 import util.Context;
 
-public class DAOvoiture {
+public class DAOvoiture implements IDAOvoiture{
 
 		public Voiture findById(Integer id) {
 			EntityManager em = Context.getInstance().getEmf().createEntityManager();
