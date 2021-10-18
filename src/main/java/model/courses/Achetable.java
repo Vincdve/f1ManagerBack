@@ -18,20 +18,10 @@ public class Achetable {
 	private int prix;
 	
 	public Achetable() {}
+	
 	public Achetable(int prix) {
 		this.prix = prix;
 	}
-
-
-	
-	
-
-
-	public Achetable() {
-		// TODO Auto-generated constructor stub
-	}
-
-
 
 
 

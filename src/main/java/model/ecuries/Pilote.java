@@ -21,9 +21,7 @@ public class Pilote extends Achetable {
 	
 	// private Caracteristique carac;
 	
-	
-	public Pilote() {super();}
-	
+		
 	public Pilote() {}
 	
 
