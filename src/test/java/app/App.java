@@ -13,6 +13,12 @@ import javax.persistence.Persistence;
 import model.connexion.Admin;
 import model.connexion.Compte;
 import model.connexion.Joueur;
+<<<<<<< Updated upstream
+=======
+import model.courses.Course;
+import model.courses.Saison;
+import model.ecuries.Ecurie;
+>>>>>>> Stashed changes
 import model.ecuries.Infrastructure;
 import model.ecuries.Level;
 import model.ecuries.Objectif;
@@ -294,36 +300,54 @@ public class App {
 		menuAdmin();
 		
 
-//		Objectif o = new Objectif("Gagner", "Decrocher", 10000);
-//		Level l = new Level(1,1,1,1,150);
-//		Level l_pilote = new Level(1,1,1,1,150,5000,25);
-//		Infrastructure inf = new Infrastructure(200000, "R&D", "Chassis", 5, 2, l);
-//		Voiture v = new Voiture(60000,"Mercedes", l, 55, 310, 745.5);
-//		Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", l_pilote, v);
-//		List<Objectif> objectif=new ArrayList();
-//		objectif.add(o);
-//		Sponsor s = new Sponsor(30000, "Motul", objectif, LocalDate.now());
-//
-//
-//
-//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
-//
-//		EntityManager em = emf.createEntityManager();
-//
-//		em.getTransaction().begin();
-//		//em.persist(o);
-//		//em.persist(s);
-//		em.persist(l);
-//		em.persist(l_pilote);
-//		em.persist(inf);
-//		em.persist(v);
-//		em.persist(p);
-//
-//
-//		em.getTransaction().commit();
-//		em.close();
-//
-//		emf.close();
+		List<Pilote> pilotes = new ArrayList();
+		List<Voiture> voitures = new ArrayList();
+		List<Sponsor> sponsors = new ArrayList();
+		List<Infrastructure> infra = new ArrayList();
+		List<Saison> calendrier = new ArrayList();
+		
+		
+		Level l = new Level(1,1,1,1,150);
+		Voiture v = new Voiture(60000,"Mercedes", l, 55, 310, 745.5);
+		voitures.add(v);
+		
+		Level l_pilote = new Level(1,1,1,1,150,5000,25);
+		Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", l_pilote, v);
+        pilotes.add(p);
+        
+		Objectif o = new Objectif("Gagner", "Decrocher", 10000);
+		Sponsor s = new Sponsor(30000,"Motul", o, LocalDate.now());
+		sponsors.add(s);
+        
+        
+        Infrastructure inf = new Infrastructure(200000, "R&D", "Chassis", 5, 2, l);
+        infra.add(inf);
+        
+        Ecurie e = new Ecurie("Groupe 4", 1000000, 25, 500, calendrier, voitures, pilotes, sponsors, infra);
+
+
+ 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
+
+		EntityManager em = emf.createEntityManager();
+
+
+
+		em.getTransaction().commit();
+		em.close();
+
+		emf.close();
+
+
+        em.getTransaction().begin();
+        em.persist(o);
+        em.persist(s);
+        em.persist(l);
+        em.persist(l_pilote);
+        em.persist(inf);
+        em.persist(v);
+        em.persist(p);
+        em.persist(e);
+     
 
 
 

@@ -28,7 +28,6 @@ public class Pilote extends Achetable {
 
 	public Pilote(int prix) {
 		super(prix);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Pilote(int prix, String nom, String prenom, int age, String civ, Level level,Voiture voiture) {
