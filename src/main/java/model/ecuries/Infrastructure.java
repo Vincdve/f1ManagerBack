@@ -1,25 +1,24 @@
 package model.ecuries;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import model.courses.Achetable;
-
 @Entity
-@DiscriminatorValue("Infrastructure")
 public class Infrastructure extends Achetable {
-
-	
 	
 	private String nom;
 	private String type;
 	private int nombreIngenieur;
 	private int pitStop; //sur la course quand ils changent les pneus
-	private transient Level level;
+	@OneToOne
+	private Level level;
 	// private Caracteristique carac;
 	
-	public Infrastructure() {super();}
-	
+	public Infrastructure() {};
 	public Infrastructure( int prix, String nom, String type, int nombreIngenieur, int pitStop,
 			Level level) {
 		super(prix);

@@ -1,22 +1,24 @@
 package model.ecuries;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import model.courses.Achetable;
-
 @Entity
 public class Sponsor extends Achetable {
 
 	
 	private String nom;
-	private Objectif objectif;
+	@OneToMany//(mappedBy = "Sponsor" )
+	private List<Objectif> objectif;//liste d'objectifs
 	private LocalDate duree;
 	
-	public Sponsor () {}
+	public Sponsor(){}
 	
-	public Sponsor(int prix, String nom, Objectif objectif, LocalDate duree) {
+	public Sponsor(int prix, String nom, List<Objectif> objectif, LocalDate duree) {
 		super(prix);
 		this.nom = nom;
 		this.objectif = objectif;
@@ -37,13 +39,14 @@ public class Sponsor extends Achetable {
 
 
 
-	public Objectif getObjectif() {
+
+	public List<Objectif> getObjectif() {
 		return objectif;
 	}
 
 
 
-	public void setObjectif(Objectif objectif) {
+	public void setObjectif(List<Objectif> objectif) {
 		this.objectif = objectif;
 	}
 

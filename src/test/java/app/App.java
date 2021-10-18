@@ -161,35 +161,41 @@ public class App {
 	public static void main(String[] args) {
 
 		
-		Objectif o = new Objectif("Gagner 3 courses", "Decrocher 3 victoires", 10000);
-		Level l = new Level(1,1,1,1,150);
-		Level l_pilote = new Level(1,1,1,1,150,5000,25);
-		Infrastructure inf = new Infrastructure(200000, "R&D", "Chassis", 5, 2, l);
-		Voiture v = new Voiture(60000,"Mercedes", l, 55, 310, 745.5);
-		Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", l_pilote, v);
-		Sponsor s = new Sponsor(30000, "Motul", o, LocalDate.now());
+		Objectif o = new Objectif("Gagner", "Decrocher", 10000);
+        Level l = new Level(1,1,1,1,150);
+        Level l_pilote = new Level(1,1,1,1,150,5000,25);
+        Infrastructure inf = new Infrastructure(200000, "R&D", "Chassis", 5, 2, l);
+        Voiture v = new Voiture(60000,"Mercedes", l, 55, 310, 745.5);
+        Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", l_pilote, v);
+        List<Objectif> objectif=new ArrayList();
+        objectif.add(o);
+        Sponsor s = new Sponsor(30000, "Motul", objectif, LocalDate.now());
+       
+
+
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
+
+        EntityManager em = emf.createEntityManager();
+
+        em.getTransaction().begin();
+        //em.persist(o);
+        //em.persist(s);
+        em.persist(l);
+        em.persist(l_pilote);
+        em.persist(inf);
+        em.persist(v);
+        em.persist(p);
+     
+
+        em.getTransaction().commit();
+        em.close();
+
+        emf.close();
+
 		
 
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
-
-		EntityManager em = emf.createEntityManager();
 		
-		em.getTransaction().begin();
-		em.persist(o);
-		em.persist(l);
-		em.persist(l_pilote);
-		em.persist(inf);
-		em.persist(v);
-		em.persist(p);
-		em.persist(s);
 		
-		em.getTransaction().commit();
-		em.close();
-
-		emf.close();
-
-
-			
 	}
 
 }

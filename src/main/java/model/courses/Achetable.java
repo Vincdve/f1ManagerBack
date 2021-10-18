@@ -7,19 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE) 
-@DiscriminatorColumn(name = "Achetable",columnDefinition = ("ENUM('Pilote','Voiture','Infrastructure')"))
+	@Inheritance(strategy=InheritanceType.SINGLE_TABLE) 
+	@DiscriminatorColumn(name = "Achetable",columnDefinition = ("Enum('Pilote','Voiture','Infrastructure')"))
 public class Achetable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int Id;
 	private int prix;
 	
-
-	
+	public Achetable() {}
 	public Achetable(int prix) {
 		this.prix = prix;
 	}

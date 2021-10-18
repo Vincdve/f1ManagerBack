@@ -4,12 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 @Entity
 public class Level {
-
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy =  GenerationType.IDENTITY )
 	private int id;
 	private int compteur;
 	private int nombreCourse;// les course .siez
@@ -18,11 +16,9 @@ public class Level {
 	private int pdc; //pointDeCompetence
 	private int salaire;
 	private int popularite;
+
 	
-	public Level() {
-		
-	}
-	
+	public Level() {}
 	//constructeur pour le reste(Infrastructure , Voiture)
 	public Level(int compteur, int nombreCourse, int nombreVictoire, int nombreSaison, int pdc) {
 		this.compteur = compteur;

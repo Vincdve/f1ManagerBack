@@ -1,30 +1,29 @@
 package model.ecuries;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import model.courses.Achetable;
-
-
-
 @Entity
-@DiscriminatorValue("Voiture")
 public class Voiture extends Achetable {
 
 	
 	
 	private String marque;
-	
-	private transient Level level;
+	@OneToOne
+	private Level level; //private transient Level level;
 	private int maniabilite;
 	private int vitesse;
 	private double poids;
+	@OneToOne(mappedBy = "voiture" )
+	private Pilote pilote;//Attribut ajout� pour mapping
+	@ManyToOne 
+	private Ecurie ecurie;//Attribut ajout� pour mapping
 	
 	// private Caracteristique carac;
 	
-	
-	public Voiture () {}
-	
+	public Voiture() {}
 	
 	public Voiture(int prix, String marque, Level level, int maniabilite, int vitesse, double poids) {
 		super(prix);
