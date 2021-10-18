@@ -1,5 +1,6 @@
 package app;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,6 +13,7 @@ import model.connexion.Admin;
 import model.connexion.Compte;
 import model.connexion.Joueur;
 import model.courses.Course;
+import model.ecuries.Infrastructure;
 import model.ecuries.Level;
 import model.ecuries.Objectif;
 import model.ecuries.Pilote;
@@ -163,15 +165,36 @@ public class App {
 	
 	public static void main(String[] args) {
 		
-		//Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", 50,);
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
+		Objectif o = new Objectif("Gagner", "Decrocher", 10000);
+        Level l = new Level(1,1,1,1,150);
+        Level l_pilote = new Level(1,1,1,1,150,5000,25);
+        Infrastructure inf = new Infrastructure(200000, "R&D", "Chassis", 5, 2, l);
+        Voiture v = new Voiture(60000,"Mercedes", l, 55, 310, 745.5);
+        Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", l_pilote, v);
+        List<Objectif> objectif=new ArrayList();
+        objectif.add(o);
+        Sponsor s = new Sponsor(30000, "Motul", objectif, LocalDate.now());
+       
 
-		EntityManager em = emf.createEntityManager();
 
-		em.close();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
 
-		emf.close();
+        EntityManager em = emf.createEntityManager();
 
+        em.getTransaction().begin();
+        //em.persist(o);
+        //em.persist(s);
+        em.persist(l);
+        em.persist(l_pilote);
+        em.persist(inf);
+        em.persist(v);
+        em.persist(p);
+     
+
+        em.getTransaction().commit();
+        em.close();
+
+        emf.close();
 
 		
 

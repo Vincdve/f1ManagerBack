@@ -1,12 +1,21 @@
 package model.ecuries;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+@Entity
 public class Objectif {
-
+	@Id
+	@GeneratedValue(strategy =  GenerationType.IDENTITY )
+	private int id;
 	private String libelle;
 	private String condition;
 	private int prime;
 	
 	
+	public Objectif() {};
 	
 	public Objectif(String libelle, String condition, int prime) {
 		this.libelle = libelle;

@@ -2,18 +2,27 @@ package model.courses;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import model.ecuries.Pilote;
-
+@Entity
 public class Course {
-
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int Id;
 	private String nom;
 	private int nombreTour;
 	private Alea alea;
 	private double cashPrice;
+	@OneToMany
 	private List<Pilote> classement;
 	
 	
-	
+	public Course() {}
 	
 	public Course(String nom, int nombreTour, Alea alea, double cashPrice, List<Pilote> classement) {
 		this.nom = nom;

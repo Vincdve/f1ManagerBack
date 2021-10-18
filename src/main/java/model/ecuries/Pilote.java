@@ -1,27 +1,32 @@
 package model.ecuries;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
 import model.courses.Achetable;
-
+@Entity
 public class Pilote extends Achetable {
-
-	
 
 	private String nom;
 	private String prenom;
 	private int age ;
 	private String civ;
+	@OneToOne
 	private Level level;
+	@OneToOne
 	private Voiture voiture;
-	
+	@ManyToOne 
+	private Ecurie ecurie; //Attribut ajouté pour mapping
 	
 	// private Caracteristique carac;
 	
 	
 	
-	
+	public Pilote() {}
 	
 
-	public Pilote(String objet, int prix) {
+	public Pilote(int prix) {
 		super(prix);
 		// TODO Auto-generated constructor stub
 	}
