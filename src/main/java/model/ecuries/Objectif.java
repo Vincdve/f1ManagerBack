@@ -1,5 +1,6 @@
 package model.ecuries;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,8 @@ public class Objectif {
 	@GeneratedValue(strategy =  GenerationType.IDENTITY )
 	private int id;
 	private String libelle;
+	@Column(name ="conditions")
+
 	private String condition;
 	private int prime;
 	

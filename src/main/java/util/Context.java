@@ -153,9 +153,7 @@ public class Context {
 		this.connected = connected;
 	}
 
-	public static Context get_instance() {
-		return _instance;
-	}
+
 
 	public static void set_instance(Context _instance) {
 		Context._instance = _instance;

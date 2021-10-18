@@ -9,7 +9,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 @Entity
 	@Inheritance(strategy=InheritanceType.SINGLE_TABLE) 
-	@DiscriminatorColumn(name = "Achetable",columnDefinition = ("Enum('Pilote','Voiture','Infrastructure')"))
+	@DiscriminatorColumn(name = "Achetable",columnDefinition = ("Enum('Pilote','Voiture','Infrastructure','Sponsor')"))
 public class Achetable {
 
 	@Id

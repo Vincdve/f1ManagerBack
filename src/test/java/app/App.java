@@ -278,6 +278,7 @@ public class App {
 
 	private static void lancerCourse() {
 
+		
 		lancerPartie();
 	}
 
@@ -289,6 +290,7 @@ public class App {
 
 	public static void main(String[] args) {
 
+		//Context.getInstance();
 		menuAdmin();
 		
 
