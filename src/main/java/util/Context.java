@@ -161,5 +161,9 @@ public class Context {
 		Context._instance = _instance;
 	}
 
+	public void closeEmf() 
+	{
+		this.emf.close();
+	}
 
 }
