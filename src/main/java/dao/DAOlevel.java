@@ -8,7 +8,7 @@ import javax.persistence.Query;
 import model.ecuries.Level;
 import util.Context;
 
-public class DAOlevel {
+public class DAOlevel implements IDAOlevel{
 
 	public Level findById(Integer id) {
 		EntityManager em = Context.getInstance().getEmf().createEntityManager();

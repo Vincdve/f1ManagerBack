@@ -8,7 +8,7 @@ import javax.persistence.Query;
 import model.ecuries.Infrastructure;
 import util.Context;
 
-public class DAOinfrastructure {
+public class DAOinfrastructure implements IDAOinfrastructure{
 
 	public Infrastructure findById(Integer id) {
 		EntityManager em = Context.getInstance().getEmf().createEntityManager();
