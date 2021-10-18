@@ -11,7 +11,7 @@ public class Sponsor extends Achetable {
 
 	
 	private String nom;
-	private Objectif objectif;
+	private transient Objectif objectif;
 	private LocalDate duree;
 	
 	public Sponsor () {}
