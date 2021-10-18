@@ -4,13 +4,16 @@ import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
-
-import model.courses.Achetable;
 @Entity
-public class Sponsor extends Achetable {
+public class Sponsor {
 
-	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int Id;
 	private String nom;
 	@OneToOne (cascade = CascadeType.PERSIST)//(mappedBy = "Sponsor" )
 	private Objectif objectif;//liste d'objectifs
@@ -19,7 +22,7 @@ public class Sponsor extends Achetable {
 	public Sponsor(){}
 	
 	public Sponsor(int prix, String nom, Objectif objectif, LocalDate duree) {
-		super(prix);
+		
 		this.nom = nom;
 		this.objectif = objectif;
 		this.duree = duree;
