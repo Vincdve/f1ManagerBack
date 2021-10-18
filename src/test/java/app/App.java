@@ -24,11 +24,6 @@ import util.Context;
 
 public class App {
 	
-	List<Pilote> pilotes = new ArrayList();
-	List<Voiture> voitures = new ArrayList();
-	List<Sponsor> sponsors = new ArrayList();
-	List<Course> courses = new ArrayList();
-	List<Objectif> objectifs = new ArrayList();
 	
 	public static String saisieString(String msg) 
 	{
@@ -97,7 +92,7 @@ public class App {
 	 
 	private static void menuAdmin() {
 		System.out.println("Menu Admin : ");
-		System.out.println("1 - Accéder à la boutique ");
+		System.out.println("1 - Accï¿½der ï¿½ la boutique ");
 		System.out.println("2 - Retour");
 		
 		
@@ -118,7 +113,7 @@ public class App {
 	public static void menuJoueur()
 	{
 		System.out.println("Menu Joueur : ");
-		System.out.println("1 - Accéder à la partie ");
+		System.out.println("1 - Accï¿½der ï¿½ la partie ");
 		System.out.println("2 - Retour");
 		
 		
@@ -137,7 +132,7 @@ public class App {
 	private static void lancerPartie() {
 
 		System.out.println("Partie : ");
-		System.out.println("1 - Configurer l'écurie ");
+		System.out.println("1 - Configurer l'ï¿½curie ");
 		System.out.println("2 - Lancer une course");
 		System.out.println("3 - Retour");
 		
@@ -164,6 +159,7 @@ public class App {
 
 	
 	public static void main(String[] args) {
+
 		
 		Objectif o = new Objectif("Gagner", "Decrocher", 10000);
         Level l = new Level(1,1,1,1,150);

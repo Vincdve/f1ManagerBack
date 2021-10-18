@@ -8,6 +8,8 @@ import model.courses.Achetable;
 @Entity
 public class Voiture extends Achetable {
 
+	
+	
 	private String marque;
 	@OneToOne
 	private Level level; //private transient Level level;
@@ -15,9 +17,9 @@ public class Voiture extends Achetable {
 	private int vitesse;
 	private double poids;
 	@OneToOne(mappedBy = "voiture" )
-	private Pilote pilote;//Attribut ajouté pour mapping
+	private Pilote pilote;//Attribut ajoutï¿½ pour mapping
 	@ManyToOne 
-	private Ecurie ecurie;//Attribut ajouté pour mapping
+	private Ecurie ecurie;//Attribut ajoutï¿½ pour mapping
 	
 	// private Caracteristique carac;
 	

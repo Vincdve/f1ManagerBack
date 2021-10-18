@@ -17,11 +17,12 @@ public class Pilote extends Achetable {
 	@OneToOne
 	private Voiture voiture;
 	@ManyToOne 
-	private Ecurie ecurie; //Attribut ajouté pour mapping
+	private Ecurie ecurie; //Attribut ajoutï¿½ pour mapping
 	
 	// private Caracteristique carac;
 	
 	
+	public Pilote() {super();}
 	
 	public Pilote() {}
 	
@@ -42,21 +43,6 @@ public class Pilote extends Achetable {
 	}
 
 	
-
-	public Pilote(String objet, int prix, String nom, String prenom, int age, String civ, Level level,
-			Voiture voiture) {
-		super(prix);
-		this.nom = nom;
-		this.prenom = prenom;
-		this.age = age;
-		this.civ = civ;
-		this.level = level;
-		this.voiture = voiture;
-	}
-
-
-
-
 
 	public String getNom() {
 		return nom;

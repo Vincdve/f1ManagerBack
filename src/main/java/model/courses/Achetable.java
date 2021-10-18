@@ -27,6 +27,15 @@ public class Achetable {
 	
 
 
+	public Achetable() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
+
+
 	public int getPrix() {
 		return prix;
 	}

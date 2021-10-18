@@ -10,6 +10,7 @@ import model.courses.Achetable;
 @Entity
 public class Sponsor extends Achetable {
 
+	
 	private String nom;
 	@OneToMany//(mappedBy = "Sponsor" )
 	private List<Objectif> objectif;//liste d'objectifs
