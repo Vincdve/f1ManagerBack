@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import model.ecuries.Sponsor;
 import util.Context;
 
-public class DAOsponsor {
+public class DAOsponsor implements IDAOsponsor{
 
 	public Sponsor findById(Integer id) {
 		EntityManager em = Context.getInstance().getEmf().createEntityManager();
