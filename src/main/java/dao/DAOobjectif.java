@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import model.ecuries.Objectif;
 import util.Context;
 
-public class DAOobjectif {
+public class DAOobjectif implements IDAOobjectif{
 
 	public Objectif findById(Integer id) {
 		EntityManager em = Context.getInstance().getEmf().createEntityManager();
