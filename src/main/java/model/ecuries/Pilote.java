@@ -1,5 +1,6 @@
 package model.ecuries;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
@@ -12,7 +13,7 @@ public class Pilote extends Achetable {
 	private String prenom;
 	private int age ;
 	private String civ;
-	@OneToOne
+	@OneToOne (cascade = CascadeType.PERSIST)
 	private Level level;
 	@OneToOne
 	private Voiture voiture;
@@ -40,6 +41,15 @@ public class Pilote extends Achetable {
 		this.voiture = voiture;
 	}
 
+	public Pilote(int prix, String nom, String prenom, int age, String civ, Level level) {
+		super(prix);
+		this.nom = nom;
+		this.prenom = prenom;
+		this.age = age;
+		this.civ = civ;
+		this.level = level;
+		
+	}
 	
 
 	public String getNom() {
