@@ -2,9 +2,8 @@ package dao;
 
 import java.util.List;
 
-
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import model.ecuries.Voiture;
 import util.Context;
@@ -20,7 +19,7 @@ public class DAOvoiture implements IDAOvoiture{
 
 		public List<Voiture> findAll() {
 			EntityManager em = Context.getInstance().getEmf().createEntityManager();
-			Query requete = em.createQuery("from Voiture v",Voiture.class);
+			TypedQuery<Voiture> requete = em.createQuery("from Voiture v",Voiture.class);
 			List<Voiture> voiture = requete.getResultList();
 			em.close();
 			return voiture;

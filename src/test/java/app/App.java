@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import javax.persistence.EntityManager;
@@ -13,8 +14,7 @@ import javax.persistence.Persistence;
 import model.connexion.Admin;
 import model.connexion.Compte;
 import model.connexion.Joueur;
-<<<<<<< Updated upstream
-=======
+import model.courses.Alea;
 import model.courses.Course;
 import model.courses.Saison;
 import model.ecuries.Ecurie;
@@ -30,6 +30,7 @@ import util.Context;
 
 public class App {
 
+	static int compteur = 1;
 
 	public static String saisieString(String msg) 
 	{
@@ -281,12 +282,85 @@ public class App {
 		case 3 : menuJoueur();
 		}
 	}
+	
+	private static void lancerSaison() {
+		
+	}
 
 	private static void lancerCourse() {
+		//Afficher les infos de la course
+		
+		//Course course = new Course();
+		
+		
+		
+		Course course = Context.getInstance().getDaoCourse().findById(compteur);
+		String nom = course.getNom();
+		int nbTour = course.getNombreTour();
+		
+		System.out.println("Circuit" + nom + "Tours" + nbTour);
+			
+		Pilote pilote1 = Context.getInstance().getDaoPilote().findById(1);
+		
+		//int nbVictoirePilote1 = pilote1.getLevel().getNombreVictoire();
+		
+		
+		Voiture voiture = Context.getInstance().getDaoVoiture().findById(compteur);
+		String nom = course.getNom();
+		
+		//recupere la config de configEcurie
+		int levelPilote1 = ecurie.getEcurie().getPilote().getLevel().getCompteur();
+		int levelVoiture1 = getEcurie().getVoiture().getLevel().getCompteur();
+		int maniabiliteVoiture1 = ecurie.getVoiture().getManiabilite();
+		int poidsVoiture1 = ecurie.getVoiture().getPoids();
+		int vitesseVoiture1 = ecurie.getVoiture().getVitesse();
+		int pitStopInfrastructure = ecurie.getInfrastucture().getpitStop();
+		int levelInfrastructure = ecurie.getInfrastucture().getLevel().getCompteur();
+		
+		int levelPilote2 = getEcurie().getPilote().getLevel().getCompteur();
+		int levelVoiture2 = getEcurie().getVoiture().getLevel().getCompteur();
+		int maniabiliteVoiture2 = ecurie.getVoiture().getManiabilite();
+		int poidsVoiture2 = ecurie.getVoiture().getPoids();
+		int vitesseVoiture2 = ecurie.getVoiture().getVitesse();
+		
+				
+		Alea alea = new Alea();
 
+		while(cpt<nombreTour){
+		//creer fonction random
+		Random r = new Random();
+		int a= alea.getOption(r.nextInt(5));
+		
+		//generer un algorithme pour le classement
+		
+		int c_voiture1 = (maniabiliteVoiture1 +vitesseVoiture1) - poidsVoiture1;
+		int c_voiture2 = (maniabiliteVoiture2 +vitesseVoiture2) - poidsVoiture2;
+		positionPilote1 = 20 - ((levelPilote1*0.1)+(levelInfrastructure*0.1)+((levelVoiture1+c_voiture1)*0.1));
+		positionPilote2 = 20 - ((levelPilote2*0.1)+(levelInfrastructure*0.1)+((levelVoiture2+c_voiture2)*0.1));
+		cpt++;
+		}
+		
+		double scorePilote1= (((maniabiliteVoiture1 +vitesseVoiture1) - (poidsVoiture1/10)) +((levelPilote1*0.1)+(levelInfrastructure*0.1)+((levelVoiture1)*0.1)));
+		double scorePilote2 = (((maniabiliteVoiture2 +vitesseVoiture2) - (poidsVoiture2/10)) +((levelPilote2*0.1)+(levelInfrastructure*0.1)+((levelVoiture2)*0.1)));
+		double totalscorePilote1 =0; 
+		double totalscorePilote2 =0;
+		
+		for (i =1 , i<nbTour, i++) {
+			totalscorePilote1+=scorePilote1;
+		}
+		
+		
+		
+		//Afficher un classement en fonction des stats
+		System.out.println("Classement"+ classement);
 		
 		lancerPartie();
-	}
+	
+	
+	
+	
+		
+		}
 
 	private static void configEcurie() {
 
@@ -299,55 +373,55 @@ public class App {
 		//Context.getInstance();
 		menuAdmin();
 		
-
-		List<Pilote> pilotes = new ArrayList();
-		List<Voiture> voitures = new ArrayList();
-		List<Sponsor> sponsors = new ArrayList();
-		List<Infrastructure> infra = new ArrayList();
-		List<Saison> calendrier = new ArrayList();
-		
-		
-		Level l = new Level(1,1,1,1,150);
-		Voiture v = new Voiture(60000,"Mercedes", l, 55, 310, 745.5);
-		voitures.add(v);
-		
-		Level l_pilote = new Level(1,1,1,1,150,5000,25);
-		Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", l_pilote, v);
-        pilotes.add(p);
-        
-		Objectif o = new Objectif("Gagner", "Decrocher", 10000);
-		Sponsor s = new Sponsor(30000,"Motul", o, LocalDate.now());
-		sponsors.add(s);
-        
-        
-        Infrastructure inf = new Infrastructure(200000, "R&D", "Chassis", 5, 2, l);
-        infra.add(inf);
-        
-        Ecurie e = new Ecurie("Groupe 4", 1000000, 25, 500, calendrier, voitures, pilotes, sponsors, infra);
-
-
- 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
-
-		EntityManager em = emf.createEntityManager();
-
-
-
-		em.getTransaction().commit();
-		em.close();
-
-		emf.close();
-
-
-        em.getTransaction().begin();
-        em.persist(o);
-        em.persist(s);
-        em.persist(l);
-        em.persist(l_pilote);
-        em.persist(inf);
-        em.persist(v);
-        em.persist(p);
-        em.persist(e);
-     
+//
+//		List<Pilote> pilotes = new ArrayList();
+//		List<Voiture> voitures = new ArrayList();
+//		List<Sponsor> sponsors = new ArrayList();
+//		List<Infrastructure> infra = new ArrayList();
+//		List<Saison> calendrier = new ArrayList();
+//		
+//		
+//		Level l = new Level(1,1,1,1,150);
+//		Voiture v = new Voiture(60000,"Mercedes", l, 55, 310, 745.5);
+//		voitures.add(v);
+//		
+//		Level l_pilote = new Level(1,1,1,1,150,5000,25);
+//		Pilote p = new Pilote(500000, "BILAL", "Daniel", 24, "Homme", l_pilote, v);
+//        pilotes.add(p);
+//        
+//		Objectif o = new Objectif("Gagner", "Decrocher", 10000);
+//		Sponsor s = new Sponsor(30000,"Motul", o, LocalDate.now());
+//		sponsors.add(s);
+//        
+//        
+//        Infrastructure inf = new Infrastructure(200000, "R&D", "Chassis", 5, 2, l);
+//        infra.add(inf);
+//        
+//        Ecurie e = new Ecurie("Groupe 4", 1000000, 25, 500, calendrier, voitures, pilotes, sponsors, infra);
+//
+//
+// 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
+//
+//		EntityManager em = emf.createEntityManager();
+//
+//
+//
+//		em.getTransaction().commit();
+//		em.close();
+//
+//		emf.close();
+//
+//
+//        em.getTransaction().begin();
+//        em.persist(o);
+//        em.persist(s);
+//        em.persist(l);
+//        em.persist(l_pilote);
+//        em.persist(inf);
+//        em.persist(v);
+//        em.persist(p);
+//        em.persist(e);
+//     
 
 
 
