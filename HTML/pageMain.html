@@ -36,7 +36,7 @@ font-family:"Formula1-Regular"
 {
   display :flex;
 height: 10%;
-background-color:red;
+background-color:#f31d1d;
 justify-content :center;
 flex-direction :column;
 align-items:center;
@@ -53,8 +53,8 @@ align-items:center;
 {
   display :flex;
   height: 51%;
-  background-color:#6B88FE;
 
+background-image: url("https://64.media.tumblr.com/ac62d31ac9cbe95dee058f2bfec452c2/tumblr_p65gghjP8g1xnfdyeo2_r1_1280.jpg");
 align-items :center;
 
 flex-direction :column;
@@ -86,6 +86,7 @@ right:0px;
 transform:scale(1.0)
 
 }
+
 #piste{width:100%;}
 #piste img
 {
@@ -125,7 +126,7 @@ background-color : grey;
 
   </div>
   <div id="nom">
-    F1 Team Director Pro
+    F1 Ultimate Director Pro
   </div>
 
 </div>
@@ -139,7 +140,7 @@ background-color : grey;
   </div>
 
 <div id="Password"><input type="password" placeholder="Mot de passe">
-<br><br><br><br>
+<br><br><br>
 </div>
 
 <div id="boutonconnect">
@@ -164,6 +165,7 @@ background-color : grey;
   <div id="voiture">
     <img id="imgVoiture" src="img\voiture_surplace 1.gif">
   </div>
+
   </div>
   </body>
 </main>
@@ -182,7 +184,7 @@ function move(e)
 console.log(e.keyCode);
   if(e.keyCode==40)
   {
-    if(pos<141 ){
+    if(pos<141){
       pos+=3;
       voiture.style.top=pos;
     }
@@ -214,6 +216,8 @@ console.log(e.keyCode);
     }
   }
   }
+
+
 
 
 </script>
