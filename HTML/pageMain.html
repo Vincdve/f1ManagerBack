@@ -21,20 +21,21 @@
 
 <style>
   @font-face {
-    font-family:"F1";
-    src:url('img\Formula1-Regular.ttf')
+    font-family:"Formula1-Regular";
+    src:url(img\Formula1-Regular.ttf) ;
   }
 
 body
 {
 margin:0;
-font-family:"F1"
+font-family:"Formula1-Regular"
+
 }
 
 #header
 {
   display :flex;
-height: 16%;
+height: 10%;
 background-color:red;
 justify-content :center;
 flex-direction :column;
@@ -46,16 +47,16 @@ align-items:center;
   font-size :50px;
   font-weight:bold;
 
-  font-family:"F1"
+  font-family:"Formula1-Regular"
 }
 #content
 {
   display :flex;
-  height: 60%;
+  height: 51%;
   background-color:#6B88FE;
 
 align-items :center;
-justify-content:center;
+
 flex-direction :column;
 
 
@@ -64,16 +65,31 @@ flex-direction :column;
 {
   font-size:40px;
 }
+#boutonconnect:hover
+{
+  -webkit-transform:scale(1.20);
+
+
+}
+#boutonconnect
+{
+
+
+}
+
 #voiture
 {
 
-margin-top:-160px;
+position:absolute;
+top:10px;
+right:0px;
 transform:scale(1.0)
 
 }
-#piste
+#piste{width:100%;}
+#piste img
 {
-
+width:100%;
 
 
 }
@@ -82,27 +98,18 @@ img
 
 }
 
+
 #baspage
 {
+  position:relative;
   display :flex;
+height:23%;
 
-background-image: url('\img\pistes1.gif');
-justify-content :center;
-flex-direction :column;
-align-items:center;
-  height:20%;
-  margin:0;
+background-color : grey;
 
-}
-#boutonconnect:hover
-{
-  -webkit-transform:scale(1.15);
 
-}
-#boutonconnect
-{
-  display :flex;
-  justify-content:flex-end;
+
+
 }
 
 </style>
@@ -111,14 +118,14 @@ align-items:center;
 <main>
 
 
-  <body>
+  <body id="body">
 
 <div id="header">
   <div id="logo">
 
   </div>
   <div id="nom">
-    F1 Ultimate Team Director
+    F1 Team Director Pro
   </div>
 
 </div>
@@ -155,10 +162,58 @@ align-items:center;
  <img src="img\pistes1.gif">
     </div>
   <div id="voiture">
-    <img src="img\voiture_surplace 1.gif">
+    <img id="imgVoiture" src="img\voiture_surplace 1.gif">
   </div>
   </div>
   </body>
 </main>
 
 </html>
+
+
+<script>
+
+body.onkeydown=move;
+console.log(voiture.left);
+var pos =10;
+var posy=0;
+function move(e)
+{
+console.log(e.keyCode);
+  if(e.keyCode==40)
+  {
+    if(pos<141 ){
+      pos+=3;
+      voiture.style.top=pos;
+    }
+  }
+  else if(e.keyCode==38)
+  {
+    if(pos>-27){
+    pos-=3;
+    voiture.style.top=pos;
+    }
+  }
+
+  else if(e.keyCode==39)
+  {
+    if(posy>0)
+    {
+
+    posy-=10;
+    voiture.style.right=posy;
+
+    }
+  }
+  else if(e.keyCode==37)
+  {
+    if(posy<1100)
+    {
+    posy+=10;
+    voiture.style.right=posy;
+    }
+  }
+  }
+
+
+</script>
