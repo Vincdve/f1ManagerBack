@@ -1,0 +1,210 @@
+<html >
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>menupartie</title>
+    <style media="screen">
+      body{
+        display : flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("img/cielnuage2.png");
+        background-repeat: repeat-y;
+        background-size: 100%;
+      }
+      .contenu{
+        display : flex;
+        width : 80%;
+        margin-bottom : 200;
+      }
+      .header{
+        height : 20%;
+        width:100%;
+        background : black;
+
+      }
+      .hautHeader{
+        background : red;
+        display : flex;
+        justify-content : space-between;
+        align-items: center;
+        flex-wrap : wrap;
+        width : 100%;
+        height : 70%;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+      }
+      .cadreHautHeader{
+        border-right : solid red 2px;
+        border-left : solid red 2px;
+      }
+      .basHeader{
+        display : flex;
+        background : red;
+        width : 100%;
+        height : 30%;
+        background: linear-gradient(to bottom, red 50%, #6B8CFF 50%);
+      }
+      .menu{
+        display : flex;
+        background : black;
+        width : 100%;
+        height : 100%;
+        align-items: center;
+        justify-content: center;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom : solid red 2px;
+        border-right : solid red 2px;
+        border-left : solid red 2px;
+      }
+      .OMenu{
+        display : flex;
+        background : red;
+        font-weight : bold;
+        width : 10%;
+        height : 60%;
+        //border-radius : 10px;
+        margin: 0 20;
+        justify-content : center;
+        align-items : center;
+      }
+
+        .logo{
+      height : 50%;
+      border-radius :15%;
+      margin-left : 15px;
+    }
+    .tete{
+      height : 50%;
+      margin: 0 15px 0 40px ;
+    }
+      .nomDuJeu{
+        display : flex;
+        //font-style :  italic;
+        font-weight : bold;
+        font-family: Verdana, sans-serif;
+        //border : solid black 5px;
+        border: 15px double black ;
+        //border-radius :30px;
+        padding : 8px;
+
+      }
+      .parties{
+        display : flex;
+        flex-wrap :wrap;
+        align-content: flex-start;
+        width : 100%;
+      }
+      .partie{
+      display : flex;
+      flex-wrap : wrap;
+      width : 250px;
+      justify-content: center;
+      }
+      .tuile{
+        position : relative;
+        width : 100%;
+      }
+      .nomPartie{
+        display : flex;
+        border : solid black 5px;
+        border-radius : 15px;
+        padding : 5px;
+        justify-content: center;
+        }
+      .footer{
+        position : fixed ;
+        bottom : 0 ;
+        left : 0;
+        width : 100%;
+        height : 160px;
+        background-image: url("img/route2.png");
+        background-repeat: repeat-x;
+
+        }
+      .nouvellePartie{
+
+        background : red;
+      }
+      .lancerPartie{
+
+        background : pink;
+
+      }
+      .contenuFooter{
+        display : flex;
+        justify-content : space-evenly;
+        height : 100%;
+        align-items : center;
+}
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="cadreHautHeader">
+        <div class="hautHeader">
+          <img src="img/f1logo.png" class="logo" alt="logo">
+          <h1 class="nomDuJeu">F1 Ultimate Director Pro</h1>
+          <img src="img/teteavatar3.png" class="tete" alt="tete.png">
+        </div>
+      </div>
+
+
+
+      <div class="basHeader">
+        <div class="menu">
+          <div class="OMenu">Ecurie</div>
+          <div class="Omenu">Saison</div>
+          <div class="Omenu">Course</div>
+          <div class="Omenu">Boutique</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="contenu">
+      <div class="parties">
+        <div class="partie">
+          <img src="img/tuile1.png" class="tuile" alt="tuile">
+          <div class="nomPartie">Nom de la partie</div>
+        </div>
+        <div class="partie">
+          <img src="img/tuile1.png" class="tuile" alt="tuile">
+          <div class="nomPartie">Nom de la partie</div>
+        </div>
+        <div class="partie">
+          <img src="img/tuile1.png" class="tuile" alt="tuile">
+          <div class="nomPartie">Nom de la partie</div>
+        </div>
+        <div class="partie">
+          <img src="img/tuile1.png" class="tuile" alt="tuile">
+          <div class="nomPartie">Nom de la partie</div>
+        </div>
+        <div class="partie">
+          <img src="img/tuile1.png" class="tuile" alt="tuile">
+          <div class="nomPartie">Nom de la partie</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="contenuFooter">
+        <div class="nouvellePartie">
+          Créer une nouvelle partie
+        </div>
+        <div class="lancerPartie">
+          Lancer la partie !
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
