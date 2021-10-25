@@ -10,25 +10,20 @@
 
   </head>
 
-<script>
-
-
-</script>
-
-
-
-
-
 <style>
   @font-face {
     font-family:"Formula1-Regular";
-    src:url(img\Formula1-Regular.ttf) ;
+    src : url(img/Formula1-Regular.ttf);
+  }
+  @font-face {
+    font-family:"Formula";
+    src : url(img/Formula.ttf);
   }
 
 body
 {
 margin:0;
-font-family:"Formula1-Regular"
+
 
 }
 
@@ -40,6 +35,7 @@ background-color:#f31d1d;
 justify-content :center;
 flex-direction :column;
 align-items:center;
+border-bottom :solid black 5px;
 }
 
 #nom
@@ -64,6 +60,16 @@ flex-direction :column;
 #jouer
 {
   font-size:40px;
+  font-family:"Formula";
+  font-weight: "underline";
+}
+#login
+{
+  font-family:"Formula1-Regular"
+}
+#password
+{
+  font-family:"Formula1-Regular"
 }
 #boutonconnect:hover
 {
@@ -74,7 +80,11 @@ flex-direction :column;
 #boutonconnect
 {
 
-
+background : url('img/connect.png');
+background-position :center;
+background-repeat :no-repeat;
+width:450px;
+height:150px;
 }
 
 #voiture
@@ -86,7 +96,14 @@ right:0px;
 transform:scale(1.0)
 
 }
+#voitureBleu
 
+{
+  position:absolute;
+  top:120px;
+  right:10px;
+  transform:scale(1.0)
+}
 #piste{width:100%;}
 #piste img
 {
@@ -143,11 +160,11 @@ background-color : grey;
 <br><br><br>
 </div>
 
-<div id="boutonconnect">
 
-<img src=img\connect.png>
+<a href="pageJoueur.html">
+<input id="boutonconnect" type="button" name="" value="">
+</a>
 
-  </div>
 
 
 </div>
@@ -165,7 +182,9 @@ background-color : grey;
   <div id="voiture">
     <img id="imgVoiture" src="img\voiture_surplace 1.gif">
   </div>
-
+  <div id="voitureBleu">
+    <img id="imgVoitureBleu" src="img\voiture_surplace_bleu.gif">
+  </div>
   </div>
   </body>
 </main>
@@ -217,7 +236,47 @@ console.log(e.keyCode);
   }
   }
 
+  body.onkeydown=move;
+  console.log(voitureBleu.left);
+  var pos2 =120;
+  var pos2y=10;
+  function move(a)
+  {
+  console.log(a.keyCode);
+    if(a.keyCode==83)
+    {
+      if(pos2<151 ){
+        pos2+=3;
+        voitureBleu.style.top=pos2;
+      }
+    }
+    else if(a.keyCode==90)
+    {
+      if(pos2>-5){
+      pos2-=3;
+      voitureBleu.style.top=pos2;
+      }
+    }
 
+    else if(a.keyCode==68)
+    {
+      if(pos2y>0)
+      {
+
+      pos2y-=10;
+      voitureBleu.style.right=pos2y;
+
+      }
+    }
+    else if(a.keyCode==81)
+    {
+      if(pos2y<1100)
+      {
+      pos2y+=10;
+      voitureBleu.style.right=pos2y;
+      }
+    }
+    }
 
 
 </script>
