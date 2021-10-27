@@ -63,7 +63,6 @@ background-image: url("img/Fond.gif");
   font-weight:bold;
   font-style:oblique;
   font-family: monospace;
-    box-shadow: 50px 50px 50px green;
   color:white;
 }
 
@@ -87,14 +86,6 @@ background-image: url("img/Fond.gif");
   background-image: url("img/Accueil-droit2.jpg");
 }
 
-.videoInsert
-{
-    position: absolute;
-    min-width: 20%;
-    min-height: 20%;
-    max-width: 40%;
-    max-height: 40%;
-}
 
 #boutonconnect img
 {
@@ -105,7 +96,6 @@ background-image: url("img/Fond.gif");
 {
   border-radius: 5%;
   -webkit-transform:scale(1.15);
-
 }
 
 </style>
