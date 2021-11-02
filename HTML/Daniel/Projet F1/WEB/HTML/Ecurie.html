@@ -9,7 +9,7 @@
 
 <main>
 
-  <body id="body">
+  <body>
 
   <div id="header">
     <div id="logo">
@@ -23,24 +23,119 @@
   <div id="content">
 
     <div id="saison">
-      <a href="saison.html"><img src = "img/Fond-accueil.jpg"  ></a>
-<div id="nomSaison">SAISON</div>
+      <div id="nomSaison"> SAISON </div>
+      <a href="saison.html"> <img src = "img/saison.jpg" width="100%"; height="100%";> </a>
+      <div id="animeSaison" onmouseover="start()" onmouseout="stop()">
+        <h1 id="vroum"></h1>
+      </div>
+
     </div>
 
     <div id="pilote">
-      <a href="pilote.html">PILOTE <img src = "img/Fond-accueil.jpg" width="100%"; height="100%";> </a>
+    <div id="nomPilote"> PILOTE </div>
+      <a href="pilote.html"> <img src = "img/pilote.jpg" width="100%"; height="100%";> </a>
     </div>
 
     <div id="infrastructure">
-      <a href="infrastructure.html">INFRASTRUCTURE <img src = "img/Fond-accueil.jpg" width="100%"; height="100%";> </a>
-
-      <a href="boutique.html">BOUTIQUE <img src = "img/Fond-accueil.jpg" width="100%"; height="100%";> </a>
+      <div id="nomInfrastructure"> INFRASTRUCTURE </div>
+      <a href="infrastructure.html"> <img src = "img/infrastructure.jpg" width="100%"; height="100%";> </a>
     </div>
+
+    <div id="boutique">
+      <div id="nomBoutique"> BOUTIQUE </div>
+      <a href="boutique.html"> <img src = "img/boutique.jpg" width="100%"; height="100%";> </a>
+    </div>
+
+    <!--div id="anime" onmouseover="start()" onmouseout="stop()">
+      <h1 id="speed"></h1>
+    </div!-->
+
+
+
   </div>
 
-
-
   </body>
+
 </main>
 
+
+<script>
+
+var bool=0;
+function start()
+{
+  bool = 1;
+}
+
+function stop()
+{
+  bool = 0;
+}
+
+var bool2 = 0;
+function startSaison()
+{
+  bool2 = 1;
+}
+
+function stopSaison()
+{
+  bool2 = 0;
+}
+
+//  var image1 = document.createElement("img");
+  //var image2 = document.createElement("img");
+  var image3 = document.createElement("img");
+  var image4 = document.createElement("img");
+  //image1.src = "img/voiture_surplace_1.gif";
+  //image2.src = "img/voiture_surplace_fixe2.jpg";
+  image3.src = "img/fond_ecurie.gif";
+  image4.src = "img/saison.jpg"
+  //var div  = document.getElementById("anime");
+  var div  = document.getElementById("animeSaison");
+
+  /*var vitesse=180;
+  setInterval(chrono,10);
+
+  function chrono()
+  {
+    if(vitesse<380 & bool == 1)
+    {
+      div.appendChild(image1);
+      image1.style.visibility = "visible";
+      image2.style.visibility = "hidden";
+      vitesse = vitesse+1;
+    }
+    else if(vitesse>0)
+    {
+      vitesse = vitesse-1;
+    }
+    else if (vitesse<10)
+    {
+      div.appendChild(image2);
+      image2.style.visibility = "visible";
+      image1.style.visibility = "hidden";
+      vitesse = 0;
+    }
+    speed.innerHTML=vitesse + " km/h";
+  }*/
+
+  function afficheSaisonGif()
+  {
+    if(bool == 1)
+    {
+    div.appendChild(image3);
+    image3.style.visibility = "visible";
+    image4.style.visibility = "hidden";
+    }
+  else if(bool == 0)
+    {
+    div.appendChild(image4);
+    image3.style.visibility = "hidden";
+    image4.style.visibility = "visible";
+    }
+    vroum.innerHTML=v;
+  }
+
+</script>
 </html>

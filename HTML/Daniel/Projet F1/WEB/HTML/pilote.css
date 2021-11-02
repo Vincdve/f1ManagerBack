@@ -1,0 +1,82 @@
+  @font-face {
+    font-family:"Formula1Regular";
+    src : url(img/Formula.ttf)
+  }
+
+  @font-face {
+    font-family:"Formula1Italic";
+    src : url(img/Formula-Italic.ttf)
+  }
+
+body
+{
+margin:0;
+}
+
+#header
+{
+  display : flex;
+  justify-content:space-around;
+  align-items:center;
+  height: 12%;
+  background-color:#f31d1d;
+  border-bottom :solid black 5px;
+}
+
+#nom
+{
+  font-size :50px;
+  font-weight:bold;
+  font-family: "Formula1Regular";
+}
+
+#logo img
+{
+	width:85px;
+	height:85px;
+}
+
+#content
+{
+  display:flex;
+  height: 87%;
+  background-color: black;
+}
+
+#pilote1 img
+{
+  border : solid red 10px;
+  border-radius : 3%;
+  height : 87%;
+}
+
+#pilote2 img
+{
+  border : solid red 10px;
+  border-radius : 3%;
+  height : 87%;
+}
+
+#nomPilote
+{
+  position: relative;
+  left:35%;
+  display: block;
+  font-size:40px;
+  font-family: "Formula1Italic";
+  color:red;
+}
+
+#pilote1 :hover
+{
+  display:block;
+  border:solid green 8px;
+  border-radius: 6%;
+}
+
+#pilote2 :hover
+{
+  display:block;
+  border:solid red 8px;
+  border-radius: 6%;
+}

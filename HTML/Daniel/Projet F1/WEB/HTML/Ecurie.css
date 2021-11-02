@@ -1,30 +1,31 @@
-
-
-
   @font-face {
     font-family:"Formula1Regular";
-    src : url(Formula.ttf)
+    src : url(img/Formula.ttf)
   }
 
-
+  @font-face {
+    font-family:"Formula1Italic";
+    src : url(img/Formula-Italic.ttf)
+  }
 
 body
 {
-margin:0;
+  margin:0;
 }
 
 #header
 {
   display : flex;
-  justify-content:space-around;
-  align-items:center;
+  justify-content: left;
   height: 12%;
   background-color:#f31d1d;
-  border-bottom :solid black 5px;
+  border-bottom :solid blue 5px;
 }
 
 #nom
 {
+  position: relative;
+  left:40%;
   font-size :50px;
   font-weight:bold;
   font-family: "Formula1Regular";
@@ -32,73 +33,129 @@ margin:0;
 
 #logo img
 {
-	width:85px;
-	height:85px;
+  position: relative;
+  border-left: 50px;
+  width: 85px;
+  height : 85px;
+  border-radius: 25%;
 }
 
 #content
 {
-display:flex;
-
-  height: 87%;
+  display:flex;
+  height: 88%;
+  background-color: black;
 }
 
 #pilote img
 {
-  border : solid red 15px;
-  border-radius : 2%;
-  color:white;
+  display: flex;
+  flex-direction: column;
+  border : solid red 10px;
+  border-radius : 3%;
+  height : 87%;
+}
 
-}
-#saison :hover
-{
-position :absolute;
-left:10%;
-}
-#pilote :hover
-{
-position :absolute;
-left:30%;
-}
-#infrastructure :hover
-{
-position :absolute;
-left:50%;
-}
 #saison img
 {
-
-  border : solid green 15px;
-  border-radius : 2%;
-  width :100%;
-  height :100%;
-
+  display: flex;
+  flex-direction: column;
+  border : solid green 10px;
+  border-radius : 3%;
+  height : 87%;
 }
-#nomSaison
-{
-  position : absolute;
-  font-size:50px;
-  font-weight: bold;
-  color:green;
-  top: 50%;
-  left: 9%;
 
-}
 #infrastructure img
 {
-
-  border : solid blue 15px;
-  border-radius : 2%;
-
-
-
-
+  display: flex;
+  flex-direction: row;
+  border : solid blue 10px;
+  border-radius : 3%;
+  height : 50%;
 }
 
 #boutique img
 {
-  border : solid yellow 15px;
-  border-radius : 2%;
-    height : 50%;
+  display: flex;
+  flex-direction: row;
+  border : solid yellow 10px;
+  border-radius : 3%;
+  height : 50%;
+}
 
+#nomSaison
+{
+  position: relative;
+  left:35%;
+  display: block;
+  font-size:40px;
+  font-family: "Formula1Italic";
+  color:green;
+}
+
+#nomPilote
+{
+  position: relative;
+  left:35%;
+  display: block;
+  font-size:40px;
+  font-family: "Formula1Italic";
+  color:red;
+}
+
+#nomInfrastructure
+{
+  position: relative;
+  left:2%;
+  display: block;
+  font-size:40px;
+  font-family: "Formula1Italic";
+  color:blue;
+}
+
+#nomBoutique
+{
+  position: relative;
+  left:25%;
+  display: block;
+  font-size:40px;
+  font-family: "Formula1Italic";
+  color:yellow;
+}
+
+#saison :hover
+{
+  display:block;
+  border: solid green 8px;
+  border-radius: 6%;
+}
+
+#pilote :hover
+{
+  display:block;
+  border:solid red 8px;
+  border-radius: 6%;
+}
+
+#infrastructure :hover
+{
+  display:block;
+  border:solid blue 8px;
+  border-radius: 6%;
+}
+
+#boutique :hover
+{
+  display:block;
+  border:solid yellow 8px;
+  border-radius: 6%;
+}
+
+
+#speed
+{
+  color:red;
+  font-family: "Formula1Italic";
+  position: relative;
+  left : 30%;
 }
