@@ -1,0 +1,99 @@
+@font-face {
+  font-family:"Formula1Regular";
+  src : url(img/Formula.ttf)
+}
+
+@font-face {
+  font-family:"Formula1Italic";
+  src : url(img/Formula-Italic.ttf)
+}
+
+body
+{
+margin:0;
+}
+
+#header
+{
+  display : flex;
+  justify-content: left;
+  height: 12%;
+  background-color:#f31d1d;
+  border-bottom :solid blue 5px;
+}
+
+#nom
+{
+  position: relative;
+  left:35%;
+  font-size :50px;
+  font-weight:bold;
+  font-family: "Formula1Regular";
+}
+
+#logo img
+{
+  position: relative;
+  border-left: 50px;
+  width: 80px;
+  height : 80px;
+  border-radius: 25%;
+}
+
+#content
+{
+  display: flex;
+  flex-direction: row;
+  height: 88%;
+  background-color: black;
+}
+
+#voiture1
+{
+  border : solid red 10px;
+  border-radius : 3%;
+  width : 50%;
+  height : 100%;
+  background-color: white;
+}
+
+#voiture2
+{
+  border : solid green 10px;
+  border-radius : 3%;
+  width : 50%;
+  height : 100%;
+  background-color: white;
+}
+
+#nomVoiture1
+{
+  position: relative;
+  left:40%;
+  font-size:40px;
+  font-family: "Formula1Italic";
+  color:red;
+}
+
+#nomVoiture2
+{
+  position: relative;
+  left:40%;
+  font-size:40px;
+  font-family: "Formula1Italic";
+  color: green;
+}
+
+#contenuVoiture1
+{
+  font-size: 20px;
+  font-family: "Formula1Italic";
+  color: red;
+}
+
+#contenuVoiture2
+{
+  font-size: 20px;
+  font-family: "Formula1Italic";
+  color: green;
+}

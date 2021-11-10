@@ -1,6 +1,6 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="Ecurie.css">
+<link rel="stylesheet" href="ecurie.css">
 
 <html lang="fr" >
   <head>
@@ -9,93 +9,86 @@
 
 <main>
 
-  <body>
+<body>
 
   <div id="header">
+
     <div id="logo">
       <img src="img/Logo-F1.jpg" alt="">
     </div>
     <div id="nom">
-    ECURIE
+      ECURIE
     </div>
+
   </div>
 
   <div id="content">
 
-    <div id="saison">
-      <div id="nomSaison"> SAISON </div>
-      <a href="saison.html"> <img src = "img/saison.jpg" width="100%"; height="100%";> </a>
-      <div id="animeSaison" onmouseover="start()" onmouseout="stop()">
-        <h1 id="vroum"></h1>
+      <div id="saison" onmouseover="startSaison()" onmouseout="stopSaison()" width="25%">
+        <a href="saison.html">
+          <div id="nomSaison"> SAISON </div>
+          <img id="imgSaison" src="img/saison.jpg">
+        </a>
+      </div>
+
+      <div id="pilote" onmouseover="startPilote()" onmouseout="stopPilote()" width="25%">
+        <a href="pilote.html">
+          <div id="nomPilote"> PILOTE </div>
+          <img id="imgPilote" src="img/pilote.jpg">
+        </a>
+      </div>
+
+      <div id="infrastructure" onmouseover="startInfra()" onmouseout="stopInfra()">
+        <a href="infrastructure.html">
+          <div id="nomInfrastructure"> INFRASTRUCTURE </div>
+          <img id="imgInfra" src="img/infrastructure.jpg">
+        </a>
+      </div>
+
+      <div id="voiture" onmouseover="startVoiture()" onmouseout="stopVoiture()">
+        <a href="voiture.html">
+          <div id="nomVoiture"> VOITURE </div>
+          <img id="imgVoiture" src="img/voiture.jpg">
+        </a>
+      </div>
+
+      <div id="boutique" onmouseover="startBoutique()" onmouseout="stopBoutique()">
+        <a href="boutique.html">
+          <div id="nomBoutique"> BOUTIQUE </div>
+          <img id="imgBoutique" src="img/boutique.jpg">
+       </a>
       </div>
 
     </div>
 
-    <div id="pilote">
-    <div id="nomPilote"> PILOTE </div>
-      <a href="pilote.html"> <img src = "img/pilote.jpg" width="100%"; height="100%";> </a>
-    </div>
-
-    <div id="infrastructure">
-      <div id="nomInfrastructure"> INFRASTRUCTURE </div>
-      <a href="infrastructure.html"> <img src = "img/infrastructure.jpg" width="100%"; height="100%";> </a>
-    </div>
-
-    <div id="boutique">
-      <div id="nomBoutique"> BOUTIQUE </div>
-      <a href="boutique.html"> <img src = "img/boutique.jpg" width="100%"; height="100%";> </a>
-    </div>
-
-    <!--div id="anime" onmouseover="start()" onmouseout="stop()">
-      <h1 id="speed"></h1>
-    </div!-->
-
-
-
-  </div>
-
-  </body>
+</body>
 
 </main>
 
 
 <script>
 
-var bool=0;
-function start()
-{
-  bool = 1;
-}
+  /*var image1 = document.createElement("img");
+  var image2 = document.createElement("img");
+  image1.src = "img/voiture_surplace_1.gif";
+  image2.src = "img/voiture_surplace_fixe2.jpg";
 
-function stop()
-{
-  bool = 0;
-}
+  var div  = document.getElementById("anime");
 
-var bool2 = 0;
-function startSaison()
-{
-  bool2 = 1;
-}
+  var bool=0;
+   function start()
+   {
+     bool = 1;
+   }
 
-function stopSaison()
-{
-  bool2 = 0;
-}
+   function stop()
+   {
+     bool = 0;
+   }
 
-//  var image1 = document.createElement("img");
-  //var image2 = document.createElement("img");
-  var image3 = document.createElement("img");
-  var image4 = document.createElement("img");
-  //image1.src = "img/voiture_surplace_1.gif";
-  //image2.src = "img/voiture_surplace_fixe2.jpg";
-  image3.src = "img/fond_ecurie.gif";
-  image4.src = "img/saison.jpg"
-  //var div  = document.getElementById("anime");
-  var div  = document.getElementById("animeSaison");
-
-  /*var vitesse=180;
+  var vitesse=180;
   setInterval(chrono,10);
+  var speed = 0;
 
   function chrono()
   {
@@ -120,21 +113,70 @@ function stopSaison()
     speed.innerHTML=vitesse + " km/h";
   }*/
 
-  function afficheSaisonGif()
+  //----Afficher Gif Saison--------
+  function startSaison()
   {
-    if(bool == 1)
-    {
-    div.appendChild(image3);
-    image3.style.visibility = "visible";
-    image4.style.visibility = "hidden";
-    }
-  else if(bool == 0)
-    {
-    div.appendChild(image4);
-    image3.style.visibility = "hidden";
-    image4.style.visibility = "visible";
-    }
-    vroum.innerHTML=v;
+    var imgSaison = document.getElementById("imgSaison");
+    imgSaison.src="img/fond_saison.gif";
+  }
+
+  function stopSaison()
+  {
+    var imgSaison = document.getElementById("imgSaison");
+    imgSaison.src="img/saison.jpg";
+  }
+
+
+  //----Afficher Gif Pilote--------
+  function startPilote()
+  {
+    var imgPilote = document.getElementById("imgPilote");
+    imgPilote.src="img/fond_pilote.gif";
+  }
+
+  function stopPilote()
+  {
+    var imgPilote = document.getElementById("imgPilote");
+    imgPilote.src="img/pilote.jpg";
+  }
+
+  //----Afficher Gif infrastructure--------
+  function startInfra()
+  {
+    var imgInfra = document.getElementById("imgInfra");
+    imgInfra.src="img/fond_infrastructure.gif";
+  }
+
+  function stopInfra()
+  {
+    var imgInfra = document.getElementById("imgInfra");
+    imgInfra.src="img/infrastructure.jpg";
+  }
+
+  //----Afficher Gif Voiture--------
+  function startVoiture()
+  {
+    var imgVoiture = document.getElementById("imgVoiture");
+    imgVoiture.src="img/fond_voiture.gif";
+  }
+
+  function stopVoiture()
+  {
+    var imgVoiture = document.getElementById("imgVoiture");
+    imgVoiture.src="img/voiture.jpg";
+  }
+
+  //----Afficher Gif Boutique--------
+  function startBoutique()
+  {
+    var imgBoutique = document.getElementById("imgBoutique");
+    imgBoutique.src="img/fond_boutique.gif";
+  }
+
+  function stopBoutique()
+  {
+    var imgBoutique = document.getElementById("imgBoutique");
+    imgBoutique.src="img/boutique.jpg";
   }
 
 </script>
